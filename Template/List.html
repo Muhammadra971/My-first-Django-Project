@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie_list</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 50px;
+        }
+        .head{
+            width: 100%;
+            height: auto;
+            background: lightgoldenrodyellow;
+            padding: 10px;
+            text-align: center;
+        }
+        .Home{
+            padding: 16px;
+        }
+        #Home .Home{
+            width: 500px;
+            height: auto;
+            color: white;
+            background: red;
+            border-radius: 20px;
+            padding: 100px;
+            margin-bottom: 16px;
+            margin-left: 250px;
+            font-size: x-large;
+
+        }
+        .Home h4{
+            padding: 10px;
+
+        }
+        #Home{
+            width: 100%;
+            height:auto;
+            padding: 60px;
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <header class="head">
+        <div>
+            <h1>Movie Manager</h1>
+        </div>
+        {% include 'manu.html' %}
+    </header>
+    <div class="Main">
+        <h1>List</h1>
+    
+    </div>
+    <section id="Home">
+        {% for x in Movie_list %}
+            <div class="Home">
+                <h4>Title : {{ x.title  }}</h4>
+                <h4>Summary : {{ x.discription }}</h4>
+                <h4>Year : {{x.year}}</h4>
+                <img src= "{{x.img}}" ></img>
+            </div>
+            <div>
+                <img src="{{x.img}}" >
+                <h1><a href="{% url 'Edit' x.id %}">Edite</a>/<a href="{% url 'delete' x.id %}">Delete</a></h1>
+            </div>
+        {% endfor %}
+    </section>
+</body>
+</html>

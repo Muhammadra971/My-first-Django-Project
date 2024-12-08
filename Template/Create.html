@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie_list</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+        }
+        .head{
+            width: 100%;
+            height: auto;
+            background: lightgoldenrodyellow;
+            padding: 10px;
+            text-align: center;
+        }                  
+        .head h1{
+            font-size: 50px;
+        }
+        .Main img{
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <header class="head">
+        <div>
+            <h1>Movie Manager</h1>          
+        </div>
+        {% include 'manu.html' %}
+    </header>
+    <div class="Main">
+        {% block content %}
+        <h1>Creat
+            <img src="{% static 'Images/Logo.jpg' %}"/>
+            
+        </h1>
+        {% endblock content %}  
+        
+    </div>
+    <div>
+        <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+            {{ frm.as_p }}
+            <button type="submit">submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .head h1{
+            font-size: 50px;
+        }
+        .home ul{
+            width: 100%;
+            height: auto;
+            padding-right: 15px;
+            
+        }
+        li{
+            float: left;
+            list-style-type: none;
+            float: inline-end;
+        }
+        li a{
+            float: inline-end;
+            font-size: x-large;
+            text-decoration: none;
+            padding: 16px;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="home"> 
+        <ul>
+            <li><a href="{% url 'list' %}">List</a></li>
+            <li><a href="{% url  'Creat' %}">Creat</a></li>
+        </ul>
+        
+    </div>
+     
+</body>
+</html>
